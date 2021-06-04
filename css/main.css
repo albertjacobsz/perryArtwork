@@ -1,0 +1,15 @@
+@import url(https://fonts.googleapis.com/css2?family=Padauk);
+* {
+    font-family: 'Padauk',sans-serif;
+}
+body{
+    background-color: #FAF0DC;
+}
+.NEW{
+    margin-top: 5%;
+}
+.item-container{
+    background-color: #f0f0f0;
+    padding: 4%;
+    padding-bottom:-3%;
+}
