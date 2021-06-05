@@ -28,11 +28,11 @@ const server = http.createServer((req,res)=>{
             "Content-type":"text/html"
         });
         const cardsHTML= dataObj.map(el => replace_main(template_card,el)).join('');
-        let output = template_overview.replace('{%ITEMCARD%}',cardsHTML); 
-        output = template_overview.replace('{%ITEMCARD1',cardsHTML);
+        const output = template_overview.replace('{%ITEMCARD%}',cardsHTML); 
         res.end(output);
     }
     console.log("listening");
 
-    res.end(template_overview);
-}).listen(process.env.PORT);
+    //res.end(template_overview);
+}).listen(3000);
+//process.env.PORT
