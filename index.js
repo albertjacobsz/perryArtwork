@@ -28,7 +28,7 @@ const server = http.createServer((req,res)=>{
             "Content-type":"text/html"
         });
         const cardsHTML= dataObj.map(el => replace_main(template_card,el)).join('');
-        const output = template_overview.replace('{%ITEMCARD%}',cardsHTML); 
+        let output = template_overview.replace('{%ITEMCARD%}',cardsHTML); 
         output = template_overview.replace('{%ITEMCARD1',cardsHTML);
         res.end(output);
     }
