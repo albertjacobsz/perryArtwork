@@ -32,7 +32,8 @@ const server = http.createServer((req,res)=>{
         res.end(output);
     }
     console.log("listening");
-
+    
     //res.end(template_overview);
-}).listen(3000);
+    //TODO CHANGE BACK THE PORT
+}).listen(process.env.PORT);
 //process.env.PORT
