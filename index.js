@@ -10,21 +10,31 @@ const template_card = fs.readFileSync(`${__dirname}/templates/template-item-card
 const template_product = fs.readFileSync(`${__dirname}/templates/template-item.html`,'utf-8');
 const dataObj = JSON.parse(data);
 //FUNCT
-const replace_template = (temp,product) =>{
-    let output = temp.replace(/{%PRODUCTNAME%}/g, product.productName);
+const replace_main = (temp,product) =>{
+    let output = temp.replace(/{%NAME%}/g, product.title);
     output = output.replace(/{%IMAGE%}/g, product.image);
-    output = output.replace(/{%PRICE%}/g, product.price);
-
     output = output.replace(/{%DESCRIPTION%}/g, product.description);
     output = output.replace(/{%ID%}/g, product.id);
 
-    if(!product.organic) {output = output.replace(/{%NOT-ORGANIC%}/g, 'not-organic');}
+    //if(!product.new) {output = output.replace(/{%NOT-ORGANIC%}/g, 'not-organic');}
     return output;
 }
 const server = http.createServer((req,res)=>{
+
+    const {query, pathname} = url.parse(req.url,true);
+
+    if(pathname === '/' || pathname === '/main' || pathname === '/index'){
+        res.writeHead(200,{
+            "Content-type":"text/html"
+        });
+        const cardsHTML= dataObj.map(el => replace_template(template_card,el)).join('');
+        const output = template_overview.replace('{%ITEMCARD%}',cardsHTML); 
+        console.log(cardsHTML);
+
+        res.end(output);
+
+    }
     console.log("listening");
-    res.writeHead(200,{
-        "Content-type":"text/html"
-    });
+
     res.end(template_overview);
 }).listen(process.env.PORT);
