@@ -12,9 +12,9 @@ const dataObj = JSON.parse(data);
 //FUNCT
 const replace_main = (temp,product) =>{
     let output = temp.replace(/{%NAME%}/g, product.title);
-    //output = output.replace(/{%IMG%}/g, `http://localhost:3000${product.image}`);
+    output = output.replace(/{%IMG%}/g, `http://localhost:3000${product.image}`);
 
-   // output = output.replace(/{%DESCRIPTION%}/g, product.description);
+    output = output.replace(/{%DESCRIPTION%}/g, product.description);
     output = output.replace(/{%ID%}/g, product.id);
     //if(!product.new) {output = output.replace(/{%NOT-ORGANIC%}/g, 'not-organic');}
     return output;
@@ -29,6 +29,10 @@ const server = http.createServer((req,res)=>{
         });
         const cardsHTML= dataObj.map(el => replace_main(template_card,el)).join('');
         const output = template_overview.replace('{%ITEMCARD%}',cardsHTML); 
+        res.end(output);
+    }else if(pathname === '/product'){
+        const product = dataObj[query.id];
+        const output = replace_main(template_product,product); 
         res.end(output);
     }else{
         res.end("404 Page not found");
