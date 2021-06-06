@@ -36,5 +36,5 @@ const server = http.createServer((req,res)=>{
     
     //res.end(template_overview);
     //TODO CHANGE BACK THE PORT
-}).listen(3000);
+}).listen(process.env.PORT);
 //process.env.PORT
