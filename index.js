@@ -12,7 +12,7 @@ const dataObj = JSON.parse(data);
 //FUNCT
 const replace_main = (temp,product) =>{
     let output = temp.replace(/{%NAME%}/g, product.title);
-    //output = output.replace(/{%IMG%}/g, `${__dirname}${product.image}`);
+    //output = output.replace(/{%IMG%}/g, `http://localhost:3000${product.image}`);
 
    // output = output.replace(/{%DESCRIPTION%}/g, product.description);
     output = output.replace(/{%ID%}/g, product.id);
@@ -36,5 +36,5 @@ const server = http.createServer((req,res)=>{
     
     //res.end(template_overview);
     //TODO CHANGE BACK THE PORT
-}).listen(process.env.PORT);
+}).listen(3000);
 //process.env.PORT
