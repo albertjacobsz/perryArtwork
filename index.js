@@ -16,7 +16,6 @@ const replace_main = (temp,product) =>{
 
    // output = output.replace(/{%DESCRIPTION%}/g, product.description);
     output = output.replace(/{%ID%}/g, product.id);
-    console.log(output);
     //if(!product.new) {output = output.replace(/{%NOT-ORGANIC%}/g, 'not-organic');}
     return output;
 }
@@ -31,6 +30,8 @@ const server = http.createServer((req,res)=>{
         const cardsHTML= dataObj.map(el => replace_main(template_card,el)).join('');
         const output = template_overview.replace('{%ITEMCARD%}',cardsHTML); 
         res.end(output);
+    }else{
+        res.end("404 Page not found");
     }
     console.log("listening");
     
