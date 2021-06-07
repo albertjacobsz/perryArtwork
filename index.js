@@ -5,6 +5,7 @@ const url = require('url');
 const slugify = require('slugify');
 const express = require('express');
 const app = express();
+app.use(express.static(__dirname+'/public'));
 //PREPARING DATA
 const data = fs.readFileSync(`${__dirname}/data/data.json`,'utf-8');
 const template_overview = fs.readFileSync(`${__dirname}/templates/template-main.html`,'utf-8');
@@ -21,8 +22,7 @@ const replace_main = (temp,product) =>{
     return output;
 }
 
-app.use(express.static('public'));
-app.use(express.static(__dirname+'/public'));
+
 app.get('/', (req,res) => {
     res.writeHead(200,{
         "Content-type":"text/html"
@@ -37,7 +37,7 @@ app.get('/product', (req,res)=> {
     const output = replace_main(template_product,product); 
     res.end(output);
 });
-var server = app.listen(process.env.PORT);
+var server = app.listen(3000);
 
 /*const server = http.createServer((req,res)=>{
 
