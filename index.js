@@ -37,7 +37,7 @@ app.get('/product', (req,res)=> {
     const output = replace_main(template_product,product); 
     res.end(output);
 });
-var server = app.listen(5000);
+var server = app.listen(process.env.PORT);
 
 /*const server = http.createServer((req,res)=>{
 
