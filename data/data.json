@@ -2,7 +2,7 @@
     {
         "id":0,
         "title":"Woman from Tanzania",
-        "image": "/img/trial.jpg",
+        "image": "/image/trial.jpg",
         "description": "This is a painting created on 17/2/2020, and represents a ...",
         "new": false,
         "type": "face"
@@ -10,22 +10,22 @@
     {
         "id":1,
         "title":"Woman from Spain",
-        "image": "/img/trial.jpg",
+        "image": "/image/trial.jpg",
         "description": "This is a painting created on 17/2/2020, and represents a ...",
         "new": false,
         "type": "face"
     },
     {
         "id":2,
-        "title":"Woman from Native America",
-        "image": "/img/trial.jpg",
+        "title":"Woman from America",
+        "image": "/image/trial.jpg",
         "description": "This is a painting created on 17/2/2020, and represents a ...",
         "new": false,
         "type": "face"
     },    {
         "id":3,
         "title":"Woman from Turkey",
-        "image": "/img/trial.jpg",
+        "image": "/image/trial.jpg",
         "description": "This is a painting created on 17/2/2020, and represents a ...",
         "new": false,
         "type": "face"
@@ -33,21 +33,21 @@
     },    {
         "id":4,
         "title":"Woman from India",
-        "image": "/img/trial.jpg",
+        "image": "/image/trial.jpg",
         "description": "This is a painting created on 17/2/2020, and represents a ...",
         "new": false,
         "type": "face"
     },    {
         "id":5,
         "title":"Woman from Yakutsk",
-        "image": "/img/trial.jpg",
+        "image": "/image/trial.jpg",
         "description": "This is a painting created on 17/2/2020, and represents a ...",
         "new": false,
         "type": "face"
     },    {
         "id":6,
         "title":"Woman from the UAE",
-        "image": "/img/trial.jpg",
+        "image": "/image/trial.jpg",
         "description": "This is a painting created on 17/2/2020, and represents a ...",
         "new": false,
         "type": "face"
@@ -55,7 +55,7 @@
     {
         "id":7,
         "title":"Woman from Iran",
-        "image": "/img/trial.jpg",
+        "image": "/image/trial.jpg",
         "description": "This is a painting created on 17/2/2020, and represents a ...",
         "new": false,
         "type": "face"
@@ -63,7 +63,7 @@
     {
         "id":8,
         "title":"Woman from Europe",
-        "image": "/img/trial.jpg",
+        "image": "/image/trial.jpg",
         "description": "This is a painting created on 17/2/2020, and represents a ...",
         "new": false,
         "type": "face"

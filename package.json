@@ -9,6 +9,7 @@
   "author": "Albert Jacobsz",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "slugify": "~1.3.4"
   },
   "devDependencies": {
